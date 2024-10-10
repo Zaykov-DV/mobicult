@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  padding: 16px 24px;
+  background: #dddddd;
+  color: #fff;
+
+  &__link {
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

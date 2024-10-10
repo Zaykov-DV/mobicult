@@ -1,0 +1,17 @@
+.card {
+  padding: 20px;
+  border: 1px solid green;
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+
+
+  &__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+}
