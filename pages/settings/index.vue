@@ -6,10 +6,8 @@
     </div>
     <div class="settings__block">
       <h2 class="settings__title">Редактирование карточек</h2>
-      <transition-group
+      <ul
           v-if="cards.length"
-          name="list"
-          tag="ul"
           class="settings__cards" >
         <li v-for="card in cards"
             :key="card.id"
@@ -23,7 +21,7 @@
             Удалить
           </UButton>
         </li>
-      </transition-group>
+      </ul>
     </div>
   </div>
   <Modal v-if="isOpenModal" @close-modal="handleModal">

@@ -1,14 +1,3 @@
-<script setup>
-defineProps({
-  error: {
-    type: Object,
-    default: () => {},
-  },
-})
-
-const handleError = () => clearError({ redirect: '/' })
-</script>
-
 <template>
   <div class="error">
     <div class="error__wrapper">
@@ -24,6 +13,17 @@ const handleError = () => clearError({ redirect: '/' })
     </div>
   </div>
 </template>
+
+<script setup>
+defineProps({
+  error: {
+    type: Object,
+    default: () => {},
+  },
+})
+
+const handleError = () => clearError({ redirect: '/' })
+</script>
 
 <style scoped lang="scss">
 .error {

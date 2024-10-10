@@ -1,6 +1,7 @@
 <template>
     <div class="cards">
       <Card class="cards__card" v-for="card in cards" :key="card.id" :title="card.title"/>
+      <p v-if="!cards.length">Карточек нет, перейдите в настройки и добавьте парочку!</p>
     </div>
 </template>
 

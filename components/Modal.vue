@@ -1,7 +1,7 @@
 <template>
   <div class="modal">
     <div class="modal__wrapper" @click="emit('close-modal')">
-      <div :class="`modal__content modal__content_${modalSize}`" @click.stop="">
+      <div class="modal__content" @click.stop="">
         <!-- header -->
         <div class="modal__header">
           <h4 class="modal__title"> {{ modalTitle }} </h4>
@@ -13,30 +13,16 @@
         </div>
         <!-- slot -->
         <slot />
-
-        <div class="modal__footer" v-if="modalFooter">
-            <button @click="closeModal">Закрыть</button>
-        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import {onMounted} from "vue";
-
 defineProps({
-  modalSize: {
-    type: String,
-    default: 'm'
-  },
   modalTitle: {
     type: String,
     default: ''
-  },
-  modalFooter: {
-    type: Boolean,
-    default: false
   },
   modalMessage: {
     type: String,
@@ -44,10 +30,6 @@ defineProps({
   }})
 
 const emit = defineEmits(['close-modal'])
-
-const closeModal = () => {
-  emit("close-modal")
-}
 
 onMounted(() => {
   document.body.addEventListener('keyup', e => {
@@ -78,7 +60,7 @@ onMounted(() => {
     left: 0;
     transition: opacity .2s ease;
     right: 0;
-    z-index: 998;
+    z-index: 9;
     background-color: rgba(00,00,00,.48);
   }
 
@@ -92,10 +74,6 @@ onMounted(() => {
     z-index: 999;
     overflow: hidden;
     max-width: 600px;
-
-    &_xl {
-      min-width: 80vw;
-    }
   }
 
   &__header {
